@@ -1,18 +1,17 @@
 ##************************************************************************
 ## Script Name: shiny-run
-## Purpose:  Execute script for the shiny app       
-## 
+## Purpose:  Execute script for the shiny app
 ##
-## Created: 2020-09-28                               
-## Authors:  
-##          
-## GitHub: 
+##
+## Created: 2020-09-28
+## Authors:
+##
+## GitHub:
 ##
 ##
 ##************************************************************************
 
-
 options(shiny.autoreload = TRUE)
 #Set up permanent port
-shiny::runApp(port = 3522)
-
+#shiny::runApp(port = 3522)
+shiny::runApp(appDir = "inst/app.R",port = 3522)
