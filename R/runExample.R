@@ -2,9 +2,6 @@ library(rstudioapi)
 #' @export
 runExample <- function(fileName) {
   fileName <<- fileName
-
-
-
   appDir <- system.file("myapp", package = "OpenTree")
 
   path_aux <- paste0(appDir,"/", fileName, ".json")
