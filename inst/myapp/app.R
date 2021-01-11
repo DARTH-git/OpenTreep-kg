@@ -39,7 +39,7 @@ ui <- htmlTemplate("www/OpenTree.html",
 
 server <-  function(input, output, session){
     # First Message
-    message <- paste0("OpenTree will save your changes to the TREE structure in real-time to output/", fileName, ".json")
+    message <- paste0("OpenTree will save your changes to the tree structure in real-time to", fileName, ".json")
 
     # send the message to the event handler with name handler1 if we press the action button
     session$sendCustomMessage("handler1", message)
@@ -63,7 +63,7 @@ server <-  function(input, output, session){
         #print("JSON LLAMADA")
         json_value = input$jsonData
         #write(json_value, paste0("reactiveObjects/OpenTree_",fileName, ".json"))
-        write(json_value, paste0(getwd(),"/",fileName, ".json"))
+        write(json_value, paste0(fileName, ".json"))
 
     })
 
