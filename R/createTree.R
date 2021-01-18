@@ -36,7 +36,7 @@ createTree <- function(fileName) {
   fileName <<- fileName
   appDir <- system.file("myapp", package = "OpenTree")
 
-  path_aux <- paste0(appDir,"/", fileName, ".json")
+  path_aux <- file.path(wd, paste0(fileName, ".json"))
   assign("path_file", path_aux, envir = .GlobalEnv)
 
   if (appDir == "") {
