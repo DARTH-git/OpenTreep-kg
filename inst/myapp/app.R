@@ -59,11 +59,11 @@ server <-  function(input, output, session){
 
 
         #Write json file
-
-        #print("JSON LLAMADA")
         json_value = input$jsonData
         #write(json_value, paste0("reactiveObjects/OpenTree_",fileName, ".json"))
-        write(json_value, paste0(fileName, ".json"))
+        wd <- getOption("wd")
+        write(json_value, file.path(wd, paste0(fileName, ".json")))
+        #write(json_value, paste0(fileName, ".json"))
 
     })
 
