@@ -32,8 +32,8 @@ createTree <- function(fileName) {
     stop("Could not find myapp. Try re-installing `OpenTree`.", call. = FALSE)
   }
   #shiny::runApp(appDir, display.mode = "normal")
-  jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
-
+  #jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
+  jobRunScript("/Library/Frameworks/R.framework/Versions/4.0/Resources/library/OpenTree/myapp/shiny-run.R",  importEnv = TRUE)
   return(path_aux)
 
 }
