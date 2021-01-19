@@ -22,7 +22,7 @@ library(rstudioapi)
 createTree <- function(fileName) {
   fileName <<- fileName
 
-  appDir <- system.file("myapp", package = "OpenTree")
+  appDir <<- system.file("myapp", package = "OpenTree")
   #path_aux <- file.path(wd, paste0(fileName, ".json"))
   path_aux <- paste0(appDir,"/", fileName, ".json")
   assign("path_file", path_aux, envir = .GlobalEnv)
