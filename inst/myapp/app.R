@@ -1,16 +1,22 @@
-#
-# This is a Shiny web application. You can run the application by clicking
-# the 'Run App' button above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+##************************************************************************
+## Script Name: App Instance for createTree(fileName) function
+## Purpose:
+##
+##
+## Created: 2021-01-18
+## Authors:
+##
+## GitHub: marianafdz465
+##
+##
+##************************************************************************
 
 library(shiny)
 library(OpenTree)
 
 
+
+# Test --------------------------------------------------------------------
 
 # readSettings <- function(){
 #     if (file.exists(setfname)){
@@ -38,8 +44,11 @@ ui <- htmlTemplate("www/OpenTree.html",
 # Server ------------------------------------------------------------------
 
 server <-  function(input, output, session){
+    wd <- getOption("wd")
+    #path_file <- file.path(wd, paste0(fileName, ".json"))
+
     # First Message
-    message <- paste0("OpenTree will save your changes to the tree structure in real-time to", fileName, ".json")
+    message <- paste0("OpenTree will save your changes to the tree structure in real-time to ", fileName)
 
     # send the message to the event handler with name handler1 if we press the action button
     session$sendCustomMessage("handler1", message)
@@ -61,9 +70,9 @@ server <-  function(input, output, session){
         #Write json file
         json_value = input$jsonData
         #write(json_value, paste0("reactiveObjects/OpenTree_",fileName, ".json"))
-        wd <- getOption("wd")
-        write(json_value, file.path(wd, paste0(fileName, ".json")))
-        #write(json_value, paste0(fileName, ".json"))
+
+        #write(json_value, file.path(wd, paste0(fileName, ".json")))
+        write(json_value, paste0(fileName, ".json"))
 
     })
 
