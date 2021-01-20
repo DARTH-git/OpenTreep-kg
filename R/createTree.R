@@ -10,8 +10,6 @@
 ##
 ##
 ##************************************************************************
-
-library(rstudioapi)
 #' createTree
 #' \{createTree} Deploy shiny app
 #'
@@ -33,7 +31,8 @@ createTree <- function(fileName) {
   }
   #shiny::runApp(appDir, display.mode = "normal")
   #jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
-  jobRunScript("/Library/Frameworks/R.framework/Versions/4.0/Resources/library/OpenTree/myapp/shiny-run.R",  importEnv = TRUE)
+  path_aux2 <- paste0(appDir, "/shiny-run.R")
+  jobRunScript(path_aux2,  importEnv = TRUE)
   return(path_aux)
 
 }

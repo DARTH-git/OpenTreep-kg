@@ -13,6 +13,7 @@
 
 library(shiny)
 library(OpenTree)
+library(rstudioapi)
 
 
 
@@ -48,7 +49,7 @@ server <-  function(input, output, session){
     #path_file <- file.path(wd, paste0(fileName, ".json"))
 
     # First Message
-    message <- paste0("OpenTree will save your changes to the tree structure in real-time to ", fileName)
+    message <- paste0("OpenTree will save your changes to the tree structure in real-time to ", path_file)
 
     # send the message to the event handler with name handler1 if we press the action button
     session$sendCustomMessage("handler1", message)
