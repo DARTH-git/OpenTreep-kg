@@ -19,6 +19,8 @@
 #' @export
 createTree <- function(fileName, dirname) {
   fileName <- fileName
+  dirname <- dirname
+
   appDir <- system.file("myapp", package = "OpenTree")
   #path_aux <- file.path(wd, paste0(fileName, ".json"))
   path_aux <- paste0(dirname,"/", fileName, ".json")
@@ -29,9 +31,9 @@ createTree <- function(fileName, dirname) {
     stop("Could not find myapp. Try re-installing `OpenTree`.", call. = FALSE)
   }
   #shiny::runApp(appDir, display.mode = "normal")
-  #jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
-  path_aux2 <- paste0(appDir, "/shiny-run.R")
-  source(path_aux2)
+  jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
+  #path_aux2 <- paste0(appDir, "/shiny-run.R")
+  #source(path_aux2)
   # return(path_aux)
 }
 
