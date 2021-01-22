@@ -73,7 +73,7 @@ server <-  function(input, output, session){
         #write(json_value, paste0("reactiveObjects/OpenTree_",fileName, ".json"))
 
         #write(json_value, file.path(wd, paste0(fileName, ".json")))
-        write(json_value, paste0(fileName, ".json"))
+        write(json_value, path_file)
 
     })
 
