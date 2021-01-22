@@ -11,9 +11,9 @@
 ##
 ##************************************************************************
 
-# library(shiny)
-# library(OpenTree)
-# library(rstudioapi)
+library(shiny)
+library(OpenTree)
+library(rstudioapi)
 
 
 
