@@ -18,6 +18,7 @@
 #' Interface with the json file inside the directory output
 #' @export
 createTree <- function(fileName, dirname) {
+  require(rstudioapi)
   fileName <- fileName
   dirname <- dirname
 
