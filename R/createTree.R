@@ -17,12 +17,12 @@
 #' @return
 #' Interface with the json file inside the directory output
 #' @export
-createTree <- function(fileName) {
+createTree <- function(fileName, dirname) {
   fileName <<- fileName
 
   appDir <<- system.file("myapp", package = "OpenTree")
   #path_aux <- file.path(wd, paste0(fileName, ".json"))
-  path_aux <- paste0(appDir,"/", fileName, ".json")
+  path_aux <- paste0(dirname,"/", fileName, ".json")
   assign("path_file", path_aux, envir = .GlobalEnv)
   #assign("path_file", path_aux, envir = .GlobalEnv)
 
@@ -32,7 +32,7 @@ createTree <- function(fileName) {
   #shiny::runApp(appDir, display.mode = "normal")
   #jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
   path_aux2 <- paste0(appDir, "/shiny-run.R")
-  jobRunScript(path_aux2,  importEnv = TRUE)
+  source(path_aux2)
   return(path_aux)
 
 }
