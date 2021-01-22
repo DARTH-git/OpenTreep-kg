@@ -17,7 +17,7 @@
 #' @return
 #' Interface with the json file inside the directory output
 #' @export
-createTree <- function(fileName, dirname) {
+createTree <- function(fileName, dirname, libpath) {
   require(rstudioapi)
   fileName <- fileName
   dirname <- dirname
@@ -32,7 +32,8 @@ createTree <- function(fileName, dirname) {
     stop("Could not find myapp. Try re-installing `OpenTree`.", call. = FALSE)
   }
   #shiny::runApp(appDir, display.mode = "normal")
-  jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
+  # jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
+  jobRunScript(paste0(libpath, "/OpenTree/myapp/shiny-run.R"), importEnv = TRUE)
   #path_aux2 <- paste0(appDir, "/shiny-run.R")
   #source(path_aux2)
   # return(path_aux)
