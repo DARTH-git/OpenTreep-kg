@@ -32,7 +32,6 @@ createTree <- function(fileName, dirname) {
   #jobRunScript("inst/myapp/shiny-run.R", importEnv = TRUE)
   path_aux2 <- paste0(appDir, "/shiny-run.R")
   source(path_aux2)
-  break
   # return(path_aux)
 }
 
