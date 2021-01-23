@@ -17,16 +17,11 @@
 #' @return
 #' Interface with the json file inside the directory output
 #' @export
-createTree <- function(fileName, dirname, libpath) {
-  require(rstudioapi)
-  fileName <- fileName
-  dirname <- dirname
-
+createTree <- function(fileName, dirname) {
+  
   appDir <- system.file("myapp", package = "OpenTree")
-  #path_aux <- file.path(wd, paste0(fileName, ".json"))
   path_aux <- paste0(dirname,"/", fileName, ".json")
   assign("path_file", path_aux, envir = .GlobalEnv)
-  #assign("path_file", path_aux, envir = .GlobalEnv)
 
   if (appDir == "") {
     stop("Could not find myapp. Try re-installing `OpenTree`.", call. = FALSE)
