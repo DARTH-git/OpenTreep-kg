@@ -27,5 +27,8 @@ openTree <- function(dirname) {
     stop("Could not find myapp. Try re-installing `OpenTree`.", call. = FALSE)
   }
   path_aux2 <- paste0(appDir, "/shiny-run.R")
-  source(path_aux2)
+
+  #Run in the background
+  path_shinyrun <- paste0(appDir, "/shiny-run.R")
+  jobRunScript(path_shinyrun, importEnv = TRUE)
 }
