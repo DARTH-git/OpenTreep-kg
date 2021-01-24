@@ -42,7 +42,8 @@ server <-  function(input, output, session){
   # send the message to the event handler with name handler1 if we press the action button
   session$sendCustomMessage("handler1", message)
 
-  jsonData <- read_file(dirname)
+  #jsonData <- read_file(dirname)
+  jsonData <- "{\"id\":\"node1\",\"name\":\"root\",\"type\":\"decision\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\",\"children\":[{\"id\":\"node1_1\",\"name\":\"Hola\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\",\"children\":[{\"id\":\"node1_1_1\",\"name\":\"node1_1_1\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\",\"children\":[{\"id\":\"node1_1_1_1\",\"name\":\"test\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\"},{\"id\":\"node1_1_1_2\",\"name\":\"node1_1_1_2\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\"}]},{\"id\":\"node1_1_2\",\"name\":\"node1_1_2\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\"}]},{\"id\":\"node1_2\",\"name\":\"node1_2\",\"type\":\"chance\",\"probability\":\"\",\"variables\":\"\",\"payoff\":\"\"}]}\r\n"
   session$sendCustomMessage("jsonData", jsonData)
 
   # This block fires each time we receive a message from JavaScript

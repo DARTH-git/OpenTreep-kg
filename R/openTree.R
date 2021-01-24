@@ -12,7 +12,7 @@
 ##************************************************************************
 
 #' openTree
-#' \{openTree} openTree
+#' \{openTree} openTree v.1
 #'
 #' @param
 #' @return
