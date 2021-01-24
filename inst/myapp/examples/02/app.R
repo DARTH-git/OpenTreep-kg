@@ -37,15 +37,15 @@ server <-  function(input, output, session){
   #path_file <- file.path(wd, paste0(fileName, ".json"))
 
   #First Message
-  #message <- paste0("OpenTree Open ", path_file)
+  message <- paste0("OpenTree Function test ")
 
   # send the message to the event handler with name handler1 if we press the action button
-  #session$sendCustomMessage("handler1", message)
+  session$sendCustomMessage("handler1", message)
 
-  # This block fires each time we receive a message from JavaScript
   jsonData <- read_file(dirname)
   session$sendCustomMessage("jsonData", jsonData)
 
+  # This block fires each time we receive a message from JavaScript
   output$table2 <- renderTable({
     #Write json file
     json_value = input$jsonData
