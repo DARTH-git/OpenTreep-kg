@@ -99,6 +99,7 @@ function getUserJSON() {
 		console.log(e);
 		return false;
 	}
+	console.log("GETUSERJSON", json)
 }
 
 function validateJSON() {
@@ -688,21 +689,31 @@ function update(addlevel) {
  * blank == 0 means not blank, blank == 1 means blank
  */
 function load(blank) {
-
-	if (blank == 1) {
-		// make the "are you sure you want to leave the page?" popup appear if the current tree isn't empty
-		if (!areYouSure() ) {
+  console.log(blank)
+  switch (blank) {
+      case 1:
+      console.log("BLANK1")
+      if (!areYouSure() ) {
 			return;
-		}
-	}
-
-	if(blank == 2) {
-		if(validateJSON() == false) {
+		   }
+      break;
+      case 2:
+      console.log("BLANK2")
+      if(validateJSON() == false) {
 			document.getElementById('errormessages').innerHTML = errormsg;
 			return;
-		}
-	}
+		  }
+      break;
+    default:
+      console.log("blank3", blank)
+      document.getElementById('userJSONtext').innerHTML = blank;
+	  	if(validateJSON() == false) {
+			document.getElementById('errormessages').innerHTML = errormsg;
 
+			return;
+
+  }
+  }
 	document.getElementById('errormessages').innerHTML = "";
 
 	document.getElementById('userJSONdiv').style.display='none'; // this hidden div is used to load the user's JSON file
@@ -844,6 +855,7 @@ function load(blank) {
 	//console.log(jsonstring);
 //
 	//return(jsonstring);
+	console.log("AQUI TAMBIEN ME LANZO PARA OPEN")
 	Shiny.setInputValue("jsonData", download());
 }
 
@@ -1110,6 +1122,7 @@ function nodeTypeChange() {
 function readFile(e) {
 
 	var fileInput = document.getElementById('fileInput');
+
 	var fileDisplayArea = document.getElementById('userJSONdiv');
 	var file = fileInput.files[0];
 	var textType = /text.*/;
@@ -1431,6 +1444,7 @@ function doAwesomeThing(message){
   alert(message);
 }
 
+Shiny.addCustomMessageHandler("jsonData",load );
 
 
 
