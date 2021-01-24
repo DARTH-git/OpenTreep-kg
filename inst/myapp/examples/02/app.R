@@ -13,7 +13,6 @@
 
 library(shiny)
 library(OpenTree)
-library(jsonlite)
 library(readr)
 
 # UI ----------------------------------------------------------------------
